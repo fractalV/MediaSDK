@@ -234,12 +234,11 @@ To configure and build Media SDK install cmake version 3.6 or later and run the 
   make
   make install
 
-For i686 architecture:
+For i686 architecture (use LLVM):
 
-  cmake -G "Visual Studio 17 2022" -A Win32 ..
-  cmake --build .
-or 
-  msbuild MediaSDK.sln /p:Configuration=Release /p:Platform=Win32
+  cmake -DCMAKE_C_COMPILER=C:/path/to/clang.exe -DCMAKE_CXX_COMPILER=C:/path/to/clang++.exe ..
+
+
 
 Media SDK depends on a number of packages which are identified and checked for the proper version during configuration stage. Please, make sure to install these packages to satisfy Media SDK requirements. After successful configuration 'make' will build Media SDK binaries and samples. The following cmake configuration options can be used to customize the build:
 
